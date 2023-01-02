@@ -1,4 +1,4 @@
-package com.jjeong.cms.user.service;
+package com.jjeong.cms.user.service.customer;
 
 import com.jjeong.cms.user.domain.model.Customer;
 import com.jjeong.cms.user.domain.repository.CustomerRepository;

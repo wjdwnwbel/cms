@@ -1,4 +1,4 @@
-package com.jjeong.cms.user.service;
+package com.jjeong.cms.user.service.customer;
 
 import com.jjeong.cms.user.domain.SignUpForm;
 import com.jjeong.cms.user.domain.model.Customer;
@@ -8,7 +8,6 @@ import com.jjeong.cms.user.exception.ErrorCode;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Optional;
-import javax.swing.text.html.Option;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 public class SignUpCustomerService {
+
 	private final CustomerRepository customerRepository;
 
 	public Customer signUp(SignUpForm form) {
@@ -30,7 +30,8 @@ public class SignUpCustomerService {
 	// 이메일 인증
 	@Transactional
 	public void verifyEmail(String email, String code) {
-		Customer customer = customerRepository.findByEmail(email).orElseThrow(()-> new CustomException(ErrorCode.NOT_FOUND_USER));
+		Customer customer = customerRepository.findByEmail(email).orElseThrow(()-> new CustomException(
+			ErrorCode.NOT_FOUND_USER));
 		if(customer.isVerify()) {
 			throw new CustomException(ErrorCode.ALREADY_VERIFY);
 		} else if(!customer.getVerificationCode().equals(code)) {
