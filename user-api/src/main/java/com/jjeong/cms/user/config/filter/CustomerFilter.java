@@ -2,7 +2,7 @@ package com.jjeong.cms.user.config.filter;
 
 import com.base.domain.config.JwtAuthenticationProvider;
 import com.base.domain.domain.common.UserVo;
-import com.jjeong.cms.user.service.CustomerService;
+import com.jjeong.cms.user.service.customer.CustomerService;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
