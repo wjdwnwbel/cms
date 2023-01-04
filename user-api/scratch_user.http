@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 (고객)
-POST http://localhost:8081/signup/verify?email=web@gmail.com&code=
+POST http://localhost:8081/signup/customer/verify?email=web@gmail.com&code=
 Content-Type: application/json
 
 ### 로그인 (고객)
@@ -57,6 +57,9 @@ Content-Type: application/json
   "password": "pw",
   "phone": "01000000000"
 }
+
+### 이메일 인증 (셀러)
+GET http://localhost:8081/signup/seller/verify?email=web@gmail.com&code=
 
 
 ### 로그인 (셀러)
