@@ -72,3 +72,13 @@ X-AUTH-TOKEN:
 DELETE http://localhost:8081/seller/product/item?id=2
 Content-Type: application/json
 X-AUTH-TOKEN:
+
+
+
+### 상품 검색
+GET http://localhost:8081/search/product?name=나이키
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET http://localhost:8081/search/product?detail?productId=1
+Content-Type: application/json
