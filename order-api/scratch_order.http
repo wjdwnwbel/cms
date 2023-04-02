@@ -1,3 +1,5 @@
+
+
 ### 상품 추가
 POST http://localhost:8081/seller/product
 Content-Type: application/json
@@ -82,3 +84,24 @@ Content-Type: application/json
 ### 상품 디테일 검색
 GET http://localhost:8081/search/product?detail?productId=1
 Content-Type: application/json
+X-AUTH-TOKEN:
+
+### 상품 장바구니에 추가
+POST http://localhost:8081/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN:
+
+{
+  "description": "상품 설명",
+  "id": 1,
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "270",
+      "price": 100000
+    }
+    ],
+    "name": "나이키에어포스2",
+    "sellerId": 1
+}
