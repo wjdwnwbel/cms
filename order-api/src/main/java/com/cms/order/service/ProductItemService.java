@@ -18,6 +18,7 @@ public class ProductItemService {
 	private final ProductRepository productRepository;
 	private final ProductItemRepository productItemRepository;
 
+	@Transactional
 	public Product addProductITem(Long sellerId, AddProductItemForm form) {
 		Product product = productRepository.findBySellerIdAndId(sellerId, form.getProductId())
 			.orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
